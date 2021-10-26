@@ -8,6 +8,7 @@ const workoutDesc = document.getElementById("workout-desc")
 const workoutReps = document.getElementById("workout-reps") 
 const workoutSets = document.getElementById("workout-sets") 
 const plannerId = document.getElementById("planner_select") 
+const graveyard = document.getElementById("graveyard") 
 
 
 workoutForm.addEventListener('submit', handleSubmit) 
