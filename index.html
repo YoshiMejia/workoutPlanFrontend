@@ -14,7 +14,32 @@
 </head>
 
 <body>
-    <div id="workout-form"> </div>
-    <div id="workout-view"></div>
+    <div id="workout-form"> 
+        <form id="workout-form">
+            <label for="workout-name">Workout Name:</label>
+            <input type="text" name="name" id="workout-name">
+            <br>
+            <label for="workout-desc">Workout Description:</label>
+            <input type="text" name="description" id="workout-desc">
+            <br>
+            <label for="workout-reps">How many reps?</label>
+            <input type="number" name="reps" id="workout-reps">
+            <br>
+            <label for="workout-sets">How many sets?</label>
+            <input type="number" name="sets" id="workout-sets">
+            <br>
+            <label for="planner">Which workout plan does this workout belong to?</label>
+            <input type="text" name="planner" id="planner-name">
+            <br>
+            <label for="planner_select">Or, select an existing planner:</label>
+            <select name="planner_id" id="planner_select"></select>
+            <br>
+            <input type="submit" value="Add Workout">
+            
+            <div id="workout-view"></div>
+            <div id="planner-view"></div>
+        </form>
+    </div>
+    
 </body>
 </html>
