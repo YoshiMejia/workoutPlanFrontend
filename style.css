@@ -2,9 +2,25 @@ body {
     background-color: rgb(100, 26, 51);
 }
 
+/* #workout-form{
+    /* height: 175px; */
+/* }  */
+
 div {
     background-color: rgb(255, 255, 255);
-    border: royalblue;
-    height: 150px;
-    width: 300px;
+    border: royalblue; 
+    /* height: 150px;  */
+    /* width: 300px; */
+}
+
+#planner_select{
+    width: 100px;
+}
+
+#workout-reps{
+    width: 30px;
+}
+
+#workout-sets{
+    width: 30px;
 }
