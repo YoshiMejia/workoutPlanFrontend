@@ -11,27 +11,29 @@ class Planner {
         Planner.all.push(this)
     }
 
-    addToSelect(){
-        const opt = document.createElement('option')
-        opt.value = this.id
-        opt.innerText = this.name
-        plannerId.appendChild(opt)
+    // addToSelect(){ // add to select dropdown -- deactivating for now while i try and build out one form for both
+    //     const opt = document.createElement('option')
+    //     const plannerId = document.getElementById("planner_select")
+    //     opt.value = this.id
+    //     opt.innerText = this.name
+    //     plannerId.appendChild(opt)
+    // }
+
+    // need to add workouts to the render
+    render(){
+        this.element.innerHTML = `
+        <div data-id="${this.id}">
+            <h3>${this.name}</h3>
+            <p>${this.workouts}</p>
+        </div>
+        `
+        return this.element
     }
-
-    //need to add workouts to the render
-    // render(){
-    //     this.element.innerHTML = `
-    //     <div data-id="${this.id}">
-    //         <h3>${this.name}</h3>
-    //         <p>${this.workouts}</p>
-    //     </div>
-    //     `
-    //     return this.element
-    // }
-
+    
     // just in case
-    // addToDom(){
-    //     Planner.plannerView.appendChild(this.render())
-    // }
+    addToDom(){
+        Planner.plannerView.appendChild(this.render())
+        // this.addToSelect()
+    }
     
 }
