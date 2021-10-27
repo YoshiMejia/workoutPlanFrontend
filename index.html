@@ -14,6 +14,11 @@
 </head>
 
 <body>
+    <div id="new-buttons">
+        <button id="new-workout">Create new Workout</button>
+        <button id="new-planner">Create new Planner</button>
+    </div>
+
     <div id="workout-form"> 
         <form id="workout-form">
             <label for="workout-name">Workout Name:</label>
@@ -23,19 +28,15 @@
             <input type="text" name="description" id="workout-desc">
             <br>
             <label for="workout-reps">How many reps?</label>
-            <input type="number" name="reps" id="workout-reps">
+            <input type="number" name="reps" id="workout-reps" min="1" max="30" value="1">
             <br>
             <label for="workout-sets">How many sets?</label>
-            <input type="number" name="sets" id="workout-sets">
+            <input type="number" name="sets" id="workout-sets"min="1" max="5" value="1">
             <br>
             <label for="planner">Which workout plan does this workout belong to?</label>
             <input type="text" name="planner" id="planner-name">
             <br>
-            <label for="planner_select">Or, select an existing planner:</label>
-            <select name="planner_id" id="planner_select"></select>
-            <br>
-            <input type="submit" value="Add Workout">
-            
+            <input type="submit" value="Add Workout">    
         </form>
     </div>
     <div id="workout-view"></div>
