@@ -40,28 +40,26 @@ class Workout {
         setTimeout(function(){buffSponge.remove()}, 2000)
     }
    
+    newData(){
+        workoutData.updateWorkout(this)
+    }
 
     increaseCompleted(){
         const total = this.totalReps()
         if (this.completed < total)    
             {this.completed += this.reps
-                this.render()}
+                this.render()
+                this.newData()}
             else if (this.completed >= total ) {
                this.element.outerHTML = `<div id="buff_sponge"><img src="images/buff-spongebob.gif"></div>`
                 this.completedWorkout()
             }
     }
- 
 
     handleClick = (e) => {
         if(e.target.innerText === "+"){
             this.increaseCompleted()
-            this.updateDB()
         }
-    }
-
-    updateDB(){
-        
     }
 
     addToDOM(){
