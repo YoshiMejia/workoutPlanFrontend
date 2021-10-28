@@ -2,7 +2,7 @@ class Workout {
     static all = []
     static workoutView = document.getElementById("workout-view")
 
-    constructor({id, name, description, sets, reps, completed, planner_id}){
+    constructor({id, name, description, sets, reps, completed, planner_id, planner_name}){
         this.id = id
         this.name = name
         this.description = description
@@ -10,6 +10,7 @@ class Workout {
         this.reps = reps 
         this.completed = completed
         this.planner_id = planner_id
+        this.planner_name = planner_name
         this.element = document.createElement('div')
         this.element.className = `workout-${name}-${id}` 
         this.element.addEventListener('click', this.handleClick)
@@ -34,7 +35,7 @@ class Workout {
     }
     
     completedWorkout(){
-        graveyard.innerHTML = `<h3>You crushed it, heres your workout graveyard!</h3>`
+        graveyard.innerHTML = `<h3>You crushed it, heres your most completed workout! Keep it going!!</h3>`
         graveyard.appendChild(this.render())
         const buffSponge = document.getElementById("buff_sponge")
         setTimeout(function(){buffSponge.remove()}, 2000)
