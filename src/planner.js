@@ -3,37 +3,35 @@ class Planner {
     static plannerView = document.getElementById("planner-view")
 
     constructor({id, name, workouts}){
-        this.name = name
         this.id = id
+        this.name = name
         this.workouts = workouts
         this.element = document.createElement('div')
         this.element.className = `planner-${name}-${id}`
+        this.addToSelect()
         Planner.all.push(this)
     }
 
-    // addToSelect(){ // add to select dropdown -- deactivating for now while i try and build out one form for both
-    //     const opt = document.createElement('option')
-    //     const plannerId = document.getElementById("planner_select")
-    //     opt.value = this.id
-    //     opt.innerText = this.name
-    //     plannerId.appendChild(opt)
-    // }
+    addToSelect(){ 
+        const opt = document.createElement('option')
+        const plannerId = document.getElementById("planner_select")
+        opt.value = this.id
+        opt.innerText = this.name
+        plannerId.appendChild(opt)
+    }
 
-    // need to add workouts to the render
     render(){
         this.element.innerHTML = `
         <div data-id="${this.id}">
-            <h3>${this.name}</h3>
-            <p>${this.workouts}</p>
+            <h3>Planner name: ${this.name}</h3>
+            <p>Workouts in plan: ${this.workouts.map(w => w.name )}</p>
         </div>
         `
         return this.element
     }
     
-    // just in case
     addToDom(){
         Planner.plannerView.appendChild(this.render())
-        // this.addToSelect()
     }
     
 }
