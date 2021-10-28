@@ -22,7 +22,8 @@ class WorkoutService {
                 sets: workoutSets.value,
                 reps: workoutReps.value,
                 planner_attributes: {
-                    name: plannerName.value
+                    name: plannerName.value,
+                    id: plannerSelect.value
                 }
             }
         }
@@ -38,6 +39,16 @@ class WorkoutService {
         .then(resp => resp.json())
         .then(data => {
             const w = new Workout(data)
+            const pID = w.planner_id
+            const pName = plannerName.value
+            const newP = {
+                id: pID,
+                name: pName,
+                workouts: [
+                    w
+                ]}
+            const p = new Planner(newP)
+            p.addToDom()
             w.addToDOM()
         })
         .catch(function(error) {
