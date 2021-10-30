@@ -73,8 +73,10 @@ class PlannerService {
             //grab the last workout from planners workouts array & make new workout obj w it
             const newW = new Workout(lastElement[0])
             newW.addToDOM() 
+            matchP.workouts.push(newW)
             matchP.addToDom()
             console.log(data);
+            
         })
     }
 
